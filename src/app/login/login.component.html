@@ -1,0 +1,24 @@
+
+ <div class="container mt-5">
+    <h1 class="text-center">Login</h1>
+    <form class="m-5" [formGroup]="loginform" (ngSubmit)="login_submit()">
+        <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" id="" formControlName="email"
+            [ngClass]="{'border border-danger':loginform.controls.email.touched&&loginform.controls.email.invalid,
+            'border border-success':loginform.controls.email.touched&&loginform.controls.email.valid}"
+            >
+           <span style="color:red" *ngIf="loginform.controls.email.touched&&loginform.controls.email.invalid">Please enter email</span>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Password</label>
+            <input type="password" class="form-control" id=""
+            [ngClass]="{'border border-danger':loginform.controls.password.touched&&loginform.controls.password.invalid,
+            'border border-success':loginform.controls.password.touched&&loginform.controls.password.valid}"
+            formControlName="password">
+           <span style="color:red" *ngIf="loginform.controls.password.touched&&loginform.controls.password.invalid">Please enter password</span>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Login">
+    </form>
+    
+</div>
